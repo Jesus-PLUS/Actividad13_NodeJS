@@ -1,9 +1,10 @@
 const mongodb = require("mongodb");
 const app = require('./app');
-const port = 3700;
 
-const connectionURL = "mongodb+srv://aangulo_db_user:M1clu5t3r-@micluster.zhahwyq.mongodb.net/?appName=MiCluster";
-const dbName = "portafolio";
+require("dotenv").config();
+const connectionURL = process.env.MONGODB_URI;
+const dbName = process.env.DB_NAME;
+const port = process.env.PORT || 3700;
 
 // get MongoClient
 const MongoClient = mongodb.MongoClient;
